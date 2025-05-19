@@ -1,0 +1,20 @@
+@use './variables/size-fields.scss';
+
+@mixin input-size($size) {
+  @if $size ==small {
+    height: size-fields.$size-height-small-inputs;
+    padding: size-fields.$size-padding-small-inputs;
+  }
+
+  @else if $size ==medium {
+    height: size-fields.$size-height-base-inputs;
+    padding: size-fields.$size-padding-base-inputs;
+  }
+
+  @else if $size ==large {
+    height: size-fields.$size-height-large-inputs;
+    padding: size-fields.$size-padding-base-inputs;
+  }
+
+  border-radius: size-fields.$size-border-radius-base-inputs;
+}

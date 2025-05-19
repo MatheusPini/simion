@@ -1,0 +1,59 @@
+@use "sass:color";
+@use "../styles/typography";
+@use "../styles/variables/colors";
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    background-color: colors.$light-gray;
+}
+
+.login-card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: colors.$white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+    gap: 10px;
+    padding: 24px;
+    border-radius: 8px;
+    width: 320px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.login-form-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.login-form-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.login-title {
+    @include typography.large-typography(colors.$dark-gray)
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 5px;
+}
+
+.forgot-password {
+    @include typography.medium-typography(colors.$primary);
+    display: block;
+    text-decoration: none;
+}

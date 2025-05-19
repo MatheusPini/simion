@@ -1,0 +1,130 @@
+@use "sass:color";
+@use "../../styles/variables/colors";
+@use "../../styles/typography";
+
+body,
+#root {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.faCircleUserStyle {
+  color: colors.$gray;
+  font-size: 40px;
+}
+
+
+.bodyContainer {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+}
+
+.navbar {
+  background-color: #eee;
+  padding: 1rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+
+  .sidebar {
+    background-color: colors.$light-gray;
+    border-right: 1px solid #ccc;
+    padding: 1rem;
+  }
+
+  .bodyLayout {
+    background-color: #fff;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.bodyPage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.filtroPesquisa {
+  flex-wrap: wrap;
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  // min-height: 64px;
+}
+
+
+.titlePageSection {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+
+  .titlePage {
+    @include typography.large-typography(colors.$dark-gray)
+  }
+}
+
+.tableCustom {
+
+  border-spacing: 0;
+  border: 1px solid black;
+  border-radius: 10px; // aqui funciona
+  overflow: hidden; // importante para aplicar visualmente
+
+  .headCustom {
+    .menuCustom {
+      background-color: #f2f2f2;
+      border-radius: 10px;
+
+      th {
+        border: 1px solid #ccc;
+        padding: 8px 12px;
+      }
+    }
+
+
+  }
+
+  .bodyCustom {
+    .linhaCustom {
+      td {
+        border: 1px solid #ccc;
+        padding: 8px 12px;
+      }
+    }
+  }
+}
+
+tfoot td {
+  background-color: colors.$light-gray;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 448px) {
+  .inputGroup {
+    width: 100%;
+  }
+}

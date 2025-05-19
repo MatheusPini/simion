@@ -1,0 +1,29 @@
+@use "sass:color";
+@use "../../../styles/typography";
+@use "../../../styles/variables/colors";
+@use "../../../styles/size-fields.scss";
+
+
+@mixin styled-input-field($size) {
+  // tipografia dos campos de textos
+  @include typography.typography(colors.$dark-gray, $size);
+
+  // tamanho dos campos de texto
+  @include size-fields.input-size($size);
+
+  // estilizacoes adicionais que nem todo campo precisa
+  border: 1px solid colors.$dark-gray;
+  background-color: colors.$white;
+}
+
+.input-small {
+  @include styled-input-field(small);
+}
+
+.input-medium {
+  @include styled-input-field(medium);
+}
+
+.input-large {
+  @include styled-input-field(large);
+}

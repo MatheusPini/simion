@@ -1,0 +1,29 @@
+@use "sass:color";
+@use "../../../styles/typography";
+@use "../../../styles/variables/colors";
+
+
+@mixin style-button($backgrounColor, $textColor) {
+    @include typography.medium-typography($textColor);
+    background-color: $backgrounColor;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    transition: 0.28s;
+
+    @media(max-width: 414px) {
+        width: 100%;
+    }
+
+    &:hover {
+        background-color: colors.hover-darken-color($backgrounColor);
+    }
+}
+
+.filled-base-button {
+    @include style-button(colors.$primary, colors.$white);
+}
+
+.outlined-base-button {
+    @include style-button(colors.$white, colors.$primary);
+}

@@ -1,0 +1,14 @@
+@use "sass:color";
+@use "../../../styles/typography.scss";
+@use "../../../styles/variables/colors.scss";
+
+// tipografias das labels dos campos, obedece de acordo com o tamanho dos campos para ser proporcional
+.label-small{
+ @include typography.small-typography(colors.$dark-gray);
+}
+.label-medium {
+    @include typography.medium-typography(colors.$dark-gray);
+}
+.label-large{
+    @include typography.large-typography(colors.$dark-gray);
+}

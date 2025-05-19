@@ -1,0 +1,39 @@
+@use "./variables/typography";
+@use "../styles/variables/colors";
+
+
+
+@mixin typography($color, $size) {
+    color: $color;
+    font-family: 'Roboto', sans-serif;
+
+    @if($size ==small) {
+        font-size: typography.$font-size-small;
+        line-height: typography.$line-height-small;
+        font-weight: typography.$font-weight-base;
+    }
+
+    @else if $size ==medium {
+        font-size: typography.$font-size-medium;
+        line-height: typography.$line-height-medium;
+        font-weight: typography.$font-weight-base;
+    }
+
+    @else if $size ==large {
+        font-size: typography.$font-size-large;
+        line-height: typography.$line-height-large;
+        font-weight: typography.$font-weight-base;
+    }
+}
+
+@mixin small-typography($color) {
+    @include typography($color, small)
+}
+
+@mixin medium-typography($color) {
+    @include typography($color, medium)
+}
+
+@mixin large-typography($color) {
+    @include typography($color, large)
+}
