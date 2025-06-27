@@ -1,10 +1,10 @@
 @use "sass:color";
 @use "../../../styles/typography";
 @use "../../../styles/variables/colors";
-
+@use "../../../styles/size-fields.scss";
 
 @mixin style-button($backgrounColor, $textColor) {
-    @include typography.medium-typography($textColor);
+    color: $textColor;
     background-color: $backgrounColor;
     padding: 8px;
     border: none;
@@ -18,6 +18,27 @@
     &:hover {
         background-color: colors.hover-darken-color($backgrounColor);
     }
+
+    &:focus {
+        background-color: colors.hover-lighten-color($backgrounColor);
+    }
+}
+
+@mixin typography-button($size) {
+    @include typography.typography($size);
+    @include size-fields.input-size($size);
+}
+
+.button-small {
+    @include typography-button(small);
+}
+
+.button-medium {
+    @include typography-button(medium);
+}
+
+.button-large {
+    @include typography-button(large);
 }
 
 .filled-base-button {

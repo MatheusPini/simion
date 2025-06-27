@@ -42,7 +42,8 @@
 }
 
 .login-title {
-    @include typography.large-typography(colors.$dark-gray)
+    @include typography.typography(large);
+    color: colors.$dark-gray;
 }
 
 .input-group {
@@ -53,7 +54,8 @@
 }
 
 .forgot-password {
-    @include typography.medium-typography(colors.$primary);
+    @include typography.typography(medium);
+    color: colors.$primary;
     display: block;
     text-decoration: none;
 }

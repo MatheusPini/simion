@@ -1,17 +1,11 @@
+import { BaseButtonProps } from "../../../types/inputsProperties";
 import "./base-button.scss";
 
-interface BaseButtonProps {
-    size?: string;
-    layout: "filled-base-button" | "outlined-base-button";
-    children: React.ReactNode;
-}
-
-export const BaseButtonComponent = ({ size, layout, children }: BaseButtonProps) => {
-    // Define o estilo do botão dinamicamente
-    const customStyle = size === "full" ? { width: "100%" } : size ? { width: size } : {};
+export const BaseButtonComponent = ({ width, layout, children, size = "medium" }: BaseButtonProps) => {
+    const customStyle = width === "full" ? { width: "100%" } : width ? { width: width } : {};
 
     return (
-        <button className={`${layout}`} style={customStyle}>
+        <button className={`${layout} button-${size}`} style={customStyle}>
             {children}
         </button>
     );

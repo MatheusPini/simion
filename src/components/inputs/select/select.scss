@@ -6,7 +6,7 @@
 
 @mixin styled-select-field($size) {
   // tipografia dos campos de textos
-  @include typography.typography(colors.$dark-gray, $size);
+  @include typography.typography($size);
 
   // tamanho dos campos de texto
   @include size-fields.input-size($size);
@@ -14,6 +14,12 @@
   // estilizacoes adicionais que nem todo campo precisa
   border: 1px solid colors.$dark-gray;
   background-color: colors.$white;
+  color: colors.$dark-gray;
+    &:hover,
+  &:focus, 
+  &:focus-visible {
+    border-color: colors.hover-darken-color(colors.$primary);
+  }
 }
 
 .select-small {
