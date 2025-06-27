@@ -3,8 +3,8 @@
 
 
 
-@mixin typography($color, $size) {
-    color: $color;
+@mixin typography($size) {
+    
     font-family: 'Roboto', sans-serif;
 
     @if($size ==small) {
@@ -24,16 +24,4 @@
         line-height: typography.$line-height-large;
         font-weight: typography.$font-weight-base;
     }
-}
-
-@mixin small-typography($color) {
-    @include typography($color, small)
-}
-
-@mixin medium-typography($color) {
-    @include typography($color, medium)
-}
-
-@mixin large-typography($color) {
-    @include typography($color, large)
 }

@@ -63,7 +63,8 @@ body,
   display: flex;
   flex-direction: column;
   gap: 5px;
-  // min-height: 64px;
+  justify-content: end;
+
 }
 
 
@@ -73,7 +74,8 @@ body,
   align-items: center;
 
   .titlePage {
-    @include typography.large-typography(colors.$dark-gray)
+    @include typography.typography(large);
+    color: colors.$dark-gray;
   }
 }
 
@@ -81,8 +83,8 @@ body,
 
   border-spacing: 0;
   border: 1px solid black;
-  border-radius: 10px; // aqui funciona
-  overflow: hidden; // importante para aplicar visualmente
+  border-radius: 10px;
+  overflow: hidden;
 
   .headCustom {
     .menuCustom {

@@ -4,11 +4,11 @@
 
 // tipografias das labels dos campos, obedece de acordo com o tamanho dos campos para ser proporcional
 .label-small{
- @include typography.small-typography(colors.$dark-gray);
+ @include typography.typography(small);
 }
 .label-medium {
-    @include typography.medium-typography(colors.$dark-gray);
+    @include typography.typography(medium);
 }
 .label-large{
-    @include typography.large-typography(colors.$dark-gray);
+    @include typography.typography(large);
 }
